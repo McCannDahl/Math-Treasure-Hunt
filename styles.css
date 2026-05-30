@@ -1,0 +1,144 @@
+:root {
+  --bg: #fff8e1;
+  --card: #ffffff;
+  --primary: #ff7043;
+  --primary-dark: #e64a19;
+  --accent: #42a5f5;
+  --success: #66bb6a;
+  --error: #ef5350;
+  --text: #3e2723;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  font-family: "Comic Sans MS", "Comic Sans", "Chalkboard SE", system-ui, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  padding: 1rem;
+}
+
+.game {
+  width: 100%;
+  max-width: 640px;
+}
+
+header {
+  text-align: center;
+  margin-bottom: 1rem;
+}
+
+h1 {
+  font-size: 2.25rem;
+  margin: 0.5rem 0;
+  color: var(--primary-dark);
+}
+
+.progress {
+  font-size: 1.25rem;
+  color: var(--accent);
+  margin: 0;
+}
+
+.card {
+  background: var(--card);
+  border-radius: 1.25rem;
+  padding: 1.25rem;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.card.hidden { display: none; }
+
+.clue-image {
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+  background: #ffe0b2;
+  border-radius: 1rem;
+  border: 4px dashed var(--primary);
+}
+
+.inputs {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+.label-text {
+  font-size: 1.25rem;
+  font-weight: bold;
+}
+
+input[type="text"],
+input[type="number"] {
+  font-size: 1.5rem;
+  padding: 0.6rem 0.8rem;
+  border: 3px solid var(--accent);
+  border-radius: 0.75rem;
+  width: 100%;
+  font-family: inherit;
+}
+
+input:focus {
+  outline: none;
+  border-color: var(--primary);
+}
+
+.math {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.75rem;
+}
+
+@media (max-width: 480px) {
+  .math { grid-template-columns: 1fr; }
+}
+
+button {
+  font-family: inherit;
+  font-size: 1.4rem;
+  font-weight: bold;
+  background: var(--primary);
+  color: white;
+  border: none;
+  border-radius: 0.75rem;
+  padding: 0.9rem 1rem;
+  cursor: pointer;
+  box-shadow: 0 4px 0 var(--primary-dark);
+  transition: transform 0.05s ease;
+}
+
+button:hover { background: var(--primary-dark); }
+button:active { transform: translateY(2px); box-shadow: 0 2px 0 var(--primary-dark); }
+
+.feedback {
+  font-size: 1.2rem;
+  text-align: center;
+  min-height: 1.4em;
+  margin: 0;
+}
+
+.feedback.error { color: var(--error); }
+.feedback.success { color: var(--success); }
+
+#win-card {
+  text-align: center;
+}
+
+#win-card h2 {
+  color: var(--success);
+  font-size: 2rem;
+}
