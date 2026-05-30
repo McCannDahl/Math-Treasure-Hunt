@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Treasure Hunt!</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <main class="game">
+    <header>
+      <h1>🗺️ Treasure Hunt 🗺️</h1>
+      <p id="progress" class="progress">Clue 1 of 10</p>
+    </header>
+
+    <section id="clue-card" class="card">
+      <img id="clue-image" class="clue-image" src="" alt="Where to look next" />
+
+      <div class="inputs">
+        <label class="field">
+          <span class="label-text">🔑 Password from the sticky note:</span>
+          <input
+            id="password-input"
+            type="text"
+            autocomplete="off"
+            autocapitalize="characters"
+            spellcheck="false"
+          />
+        </label>
+
+        <div class="math">
+          <label class="field">
+            <span id="math1-text" class="label-text"></span>
+            <input id="math1-input" type="number" inputmode="numeric" />
+          </label>
+          <label class="field">
+            <span id="math2-text" class="label-text"></span>
+            <input id="math2-input" type="number" inputmode="numeric" />
+          </label>
+        </div>
+
+        <button id="check-button" type="button">Check My Answers!</button>
+        <p id="feedback" class="feedback" aria-live="polite"></p>
+      </div>
+    </section>
+
+    <section id="win-card" class="card hidden">
+      <h2>🎉 You Found the Treasure! 🎉</h2>
+      <p>Great job, treasure hunters!</p>
+      <button id="restart-button" type="button">Play Again</button>
+    </section>
+  </main>
+
+  <script src="game.js"></script>
+</body>
+</html>
