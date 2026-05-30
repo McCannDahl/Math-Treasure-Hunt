@@ -3,7 +3,7 @@
 // `math` holds two single-digit addition/subtraction problems.
 const CLUES = [
   {
-    image: "images/clue1.png",
+    image: "images/clue1.jpg",
     password: "CAT",
     math: [
       { question: "2 + 3 = ?", answer: 5 },
@@ -11,7 +11,7 @@ const CLUES = [
     ],
   },
   {
-    image: "images/clue2.png",
+    image: "images/clue2.jpg",
     password: "DOG",
     math: [
       { question: "1 + 6 = ?", answer: 7 },
@@ -19,7 +19,7 @@ const CLUES = [
     ],
   },
   {
-    image: "images/clue3.png",
+    image: "images/clue3.jpg",
     password: "SUN",
     math: [
       { question: "3 + 4 = ?", answer: 7 },
@@ -27,7 +27,7 @@ const CLUES = [
     ],
   },
   {
-    image: "images/clue4.png",
+    image: "images/clue4.jpg",
     password: "MOON",
     math: [
       { question: "5 + 2 = ?", answer: 7 },
@@ -35,7 +35,7 @@ const CLUES = [
     ],
   },
   {
-    image: "images/clue5.png",
+    image: "images/clue5.jpg",
     password: "STAR",
     math: [
       { question: "4 + 4 = ?", answer: 8 },
@@ -43,7 +43,7 @@ const CLUES = [
     ],
   },
   {
-    image: "images/clue6.png",
+    image: "images/clue6.jpg",
     password: "FISH",
     math: [
       { question: "2 + 5 = ?", answer: 7 },
@@ -51,7 +51,7 @@ const CLUES = [
     ],
   },
   {
-    image: "images/clue7.png",
+    image: "images/clue7.jpg",
     password: "BIRD",
     math: [
       { question: "6 + 3 = ?", answer: 9 },
@@ -59,7 +59,7 @@ const CLUES = [
     ],
   },
   {
-    image: "images/clue8.png",
+    image: "images/clue8.jpg",
     password: "TREE",
     math: [
       { question: "1 + 8 = ?", answer: 9 },
@@ -67,7 +67,7 @@ const CLUES = [
     ],
   },
   {
-    image: "images/clue9.png",
+    image: "images/clue9.jpg",
     password: "BOOK",
     math: [
       { question: "3 + 3 = ?", answer: 6 },
@@ -75,7 +75,7 @@ const CLUES = [
     ],
   },
   {
-    image: "images/clue10.png",
+    image: "images/clue10.jpg",
     password: "CAKE",
     math: [
       { question: "4 + 5 = ?", answer: 9 },
