@@ -99,7 +99,43 @@ const els = {
   restart: document.getElementById("restart-button"),
 };
 
-let currentClue = 0;
+const STORAGE_KEY = "treasureHuntProgress";
+
+function loadProgress() {
+  try {
+    const raw = localStorage.getItem(STORAGE_KEY);
+    if (!raw) return { clue: 0, won: false };
+    const data = JSON.parse(raw);
+    const clue = Number.isInteger(data.clue) ? data.clue : 0;
+    return {
+      clue: Math.min(Math.max(clue, 0), CLUES.length - 1),
+      won: data.won === true,
+    };
+  } catch (_) {
+    return { clue: 0, won: false };
+  }
+}
+
+function saveProgress() {
+  try {
+    localStorage.setItem(
+      STORAGE_KEY,
+      JSON.stringify({ clue: currentClue, won: hasWon })
+    );
+  } catch (_) {
+    // localStorage may be unavailable (private mode, etc.) — fail silently.
+  }
+}
+
+function clearProgress() {
+  try {
+    localStorage.removeItem(STORAGE_KEY);
+  } catch (_) {}
+}
+
+const initial = loadProgress();
+let currentClue = initial.clue;
+let hasWon = initial.won;
 
 function renderClue(index) {
   const clue = CLUES[index];
@@ -132,8 +168,11 @@ function checkAnswers() {
     setTimeout(() => {
       currentClue += 1;
       if (currentClue >= CLUES.length) {
+        hasWon = true;
+        saveProgress();
         showWin();
       } else {
+        saveProgress();
         renderClue(currentClue);
       }
     }, 900);
@@ -156,6 +195,8 @@ function showWin() {
 
 function restart() {
   currentClue = 0;
+  hasWon = false;
+  clearProgress();
   els.winCard.classList.add("hidden");
   els.clueCard.classList.remove("hidden");
   renderClue(currentClue);
@@ -171,4 +212,8 @@ els.check.addEventListener("click", checkAnswers);
 
 els.restart.addEventListener("click", restart);
 
-renderClue(currentClue);
+if (hasWon) {
+  showWin();
+} else {
+  renderClue(currentClue);
+}
