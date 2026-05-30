@@ -6,6 +6,7 @@ Drop your clue pictures here as:
 - `clue2.png`
 - ...
 - `clue10.png`
+- `treasure.png` — shown on the "You Found the Treasure" page
 
 The game references them in `game.js` (see the `CLUES` array). Any
 common image format works — just update the file extension in `game.js`
